@@ -1,0 +1,41 @@
+/*.container {
+}
+*/
+
+/*
+#main {
+	margin-top: 3%;
+	margin: auto;
+}
+
+*/
+
+#weather, #cityMapper {
+	margin-top: 3%;
+}
+
+table,
+td,
+th {
+    border: 1px solid #333;
+    text-align: center;
+}
+
+thead,
+tfoot {
+    background-color: #134196;
+    color: #fff;
+}
+
+h2 {
+	margin-bottom: 2%;
+}
+
+#today {
+	font-weight: bold;
+}
+
+footer {
+	margin-top: 10%;
+	text-align: center;
+}
