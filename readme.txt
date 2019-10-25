@@ -1,1 +1,1 @@
-### App Web using CityMapper and OpenWeather API ###
+Provide informations like weather and travels from OpenWeather and CityMapper APIs.
