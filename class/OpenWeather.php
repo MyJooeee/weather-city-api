@@ -46,8 +46,6 @@ Class OpenWeather
 			return null;
 		}
 
-		$timeStampOfDay = (int) date('U', mktime(11, 0, 0, date('m'), date('d'), date('Y'))); // À 11h00 du jour
-
 	    $results = [];
 
 	    
@@ -56,12 +54,6 @@ Class OpenWeather
 
 	    $element = [];
 	    foreach ($data['list'] as $day) {
-
-	    	var_dump($day);
-
-	    	if($timeStampOfDay === (int) $day['dt']) {
-	    		continue;
-	    	}
 
 	    	$element[] = [
 	    		'temp' 		  => $day['temp']['day'],
