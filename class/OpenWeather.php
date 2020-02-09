@@ -57,12 +57,16 @@ Class OpenWeather
 	    $element = [];
 	    foreach ($data['list'] as $day) {
 
+	    	var_dump($day);
+
 	    	if($timeStampOfDay === (int) $day['dt']) {
 	    		continue;
 	    	}
 
 	    	$element[] = [
 	    		'temp' 		  => $day['temp']['day'],
+	    		'pressure' 	  => $day['pressure'],
+	    		'humidity'	  => $day['humidity'], 
 	    		'description' => $day['weather'][0]['description'],
 	    		'date'        => new DateTime('@' . $day['dt']),
 	    		'dayOfWeek'	  => $this->getDayOfWeek($day['dt']),
@@ -78,6 +82,7 @@ Class OpenWeather
 
 
 	/**
+	* DEPRECATED 
 	* Get today weather
 	* @param str $city
 	* @return array $data

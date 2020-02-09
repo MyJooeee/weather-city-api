@@ -57,9 +57,7 @@ class DisplayContent
 	{
 
 		$data = $this->inputData['openWeather'];
-		$today = $data['today'];
 		$forecast = $data['forecast'];
-
 
 		$h2Weather = 'Prévision à '. $forecast['city']. ' pour les '. $forecast['forecast'].' prochains jours : ';
 
@@ -74,27 +72,24 @@ class DisplayContent
 							            <th> Pression </th>
 							        </tr>
 							    </thead>
-							    <tbody>' .
-							        '<tr>' . 
-							            '<td id=\'today\'> Aujourd\'hui <br/>' . $today['dayOfWeek'] . ' ' .$today['date']->format('d/m/Y') . '</td>'.
-							            '<td>' . $today['icon'] . '<br/>' . $today['description'] . '</td>'.
-							            '<td>' . $today['temp'] . ' °C</td>'.
-							            '<td>' . $today['humidity'] . ' %</td>'.
-							            '<td>' . $today['pressure'] . ' hPa</td>'.
-
-							        '</tr>';
+							    <tbody>';
         
+        $i = 0;
 		foreach ($forecast['list'] as $day) {
 
-	        $element = '<tr>';
-	        $element .= '<td>' . $day['dayOfWeek'] . ' ' .$day['date']->format('d/m/Y') . '</td>';
+	        $element = ($i === 0) ? '<tr id=\'today\'>' : '<tr>';
+
+	        $element .= ($i === 0) ? '<td> Aujourd\'hui <br/>' . $day['dayOfWeek'] . ' ' .$day['date']->format('d/m/Y') . '</td>'
+	        : '<td>' . $day['dayOfWeek'] . ' ' .$day['date']->format('d/m/Y') . '</td>';
+
 	        $element .= '<td>' . $day['icon'] . '<br/>' . $day['description'] . '</td>';
 	        $element .= '<td>' . $day['temp'] . ' °C</td>';
-	        $element .= '<td> N.C.*</td>';
-	        $element .= '<td> N.C.*</td>';
+            $element .= '<td>' . $day['humidity'] . ' %</td>';
+            $element .= '<td>' . $day['pressure'] . ' hPa</td>';
 	        $element .= '</tr>';
 
 			$outputDataWeather .= $element;
+			$i++;
 		}
 
 		$outputDataWeather .= '
