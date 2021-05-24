@@ -4,6 +4,7 @@ require_once('class/OpenWeather.php');
 require_once('class/CityMapper.php');
 require_once('class/DisplayContent.php');
 
+date_default_timezone_set('Europe/Paris');
 
 $weather = new OpenWeather('43cebb6f101584f15a47a1581d009ee7');
 $forecast = $weather->getForecast('saclay,fr', '5');
