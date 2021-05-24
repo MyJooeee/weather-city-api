@@ -22,7 +22,7 @@ $inputData = [
     'pageInfo' => [
             'title' => 'JD API',
             'h1page' => 'Bonjour !',
-            'updateData' => 'Dernière màj '.date("H:i:s")
+            'updateData' => 'Dernière màj '.date("H:i:s").'.'
     ],
     'openWeather' => [
             'forecast' => $forecast,
