@@ -45,7 +45,8 @@ class DisplayContent
 
 		$this->outputData['pageInfo'] = [
 			'title' => $data['title'],
-			'h1page' => $data['h1page']
+			'h1page' => $data['h1page'],
+			'updateData' => $data['updateData']
 		];
 	}
 

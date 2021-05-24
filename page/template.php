@@ -16,21 +16,25 @@
 
    <!--  <div id="main" class = "container"> -->
 
-      <div id="weather" class="container">
+      <div class="container"> 
+        <h1> <?php echo $data['pageInfo']['h1page']; ?>  </h1> 
+      </div>
 
-      <h1> <?php echo $data['pageInfo']['h1page']; ?>  </h1>
-      
+      <div class="container">
         <h2> <?php echo $data['openWeather']['h2Weather']; ?> </h2>
         <?php echo $data['openWeather']['outputDataWeather']; ?>
 
         <br/>
         <p> N.C. : Non communiqué.</p>
-
       </div>
 
-      <div id="cityMapper" class="container">
+      <div class="container">
         <h2> <?php echo $data['cityMapper']['h2CityMapper'];  ?> </h2>
         <?php echo $data['cityMapper']['outputDataCityMapper'];  ?>
+      </div>
+
+      <div class="container"> 
+        <i> <?php echo $data['pageInfo']['updateData']; ?>  </i> 
       </div>
 
     <!-- </div> -->

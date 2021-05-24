@@ -62,7 +62,7 @@ Class OpenWeather
 	    		'description' => $day['weather'][0]['description'],
 	    		'date'        => new DateTime('@' . $day['dt']),
 	    		'dayOfWeek'	  => $this->getDayOfWeek($day['dt']),
-	    		'icon'        => '<img src="../icons/'.$day['weather'][0]['icon'].'.png"' . 'title ="' . $day['weather'][0]['description']. '" ' . 'alt="'.$day['weather'][0]['icon'].'" />'
+	    		'icon'        => '<img src="https://openweathermap.org/img/wn/'.$day['weather'][0]['icon'].'.png"' . 'title ="' . $day['weather'][0]['description']. '" ' . 'alt="'.$day['weather'][0]['icon'].'" />'
 	    	];
 	    }
 
@@ -71,36 +71,6 @@ Class OpenWeather
 	    return $results;
 
 	}
-
-
-	/**
-	* DEPRECATED 
-	* Get today weather
-	* @param str $city
-	* @return array $data
-	*
-	**/
-	public function getToday(string $city) : ?array
-	{
-		$data = $this->callAPI('weather?q='.$city);
-
-		if(is_null($data)) {
-			return null;
-		}
-	
-		return [
-				'temp' 	      => $data['main']['temp'],
-				'humidity'    => $data['main']['humidity'],
-				'pressure' 	  => $data['main']['pressure'],
-				'description' => $data['weather'][0]['description'],
-				'date'		  => new DateTime('@' . $data['dt']),
-				'dayOfWeek'	  => $this->getDayOfWeek($data['dt']),
-				'icon'        => '<img src="../icons/'.$data['weather'][0]['icon'].'.png"' . 'title ="' . $data['weather'][0]['description']. '" ' . 'alt="'.$data['weather'][0]['icon'].'" />'
-
-		];
-
-	}
-
 
 	/**
 	* Get endpoint Weather API

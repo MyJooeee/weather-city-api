@@ -14,7 +14,11 @@ class CityMapper {
 		$data = $this->callAPI('traveltime/?startcoord='.$stardCoord.'&endcoord='.$endCoord);
 
 		if(is_null($data)) {
-			return null;
+			return [
+				'startCity' => $startCity,
+				'endCity'   => $endCity,
+				'travel_time_minutes' => null
+			];
 		}
 
 		$results =  [
